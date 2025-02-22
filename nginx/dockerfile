@@ -5,7 +5,6 @@ FROM ubuntu:latest
 WORKDIR /
 
 # Install required dependencies, add nginx repo, and install nginx in one RUN statement
-# Install required dependencies, add nginx repo, and install nginx in one RUN statement
 RUN apt update && \
     apt install -y \
     curl \
