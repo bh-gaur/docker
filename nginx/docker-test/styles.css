@@ -1,0 +1,129 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fafafa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/* Container for login box */
+.login-container {
+    width: 100%;
+    max-width: 350px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-box {
+    width: 100%;
+}
+
+/* Logo styles */
+.logo {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+/* Form styles */
+.login-form {
+    margin-bottom: 20px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #3897f0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background-color: #0077cc;
+}
+
+/* Divider */
+.divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.divider span {
+    padding: 0 10px;
+    color: #999;
+}
+
+/* Social login button */
+.facebook-login {
+    width: 100%;
+    padding: 12px;
+    background-color: #4267B2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.facebook-login:hover {
+    background-color: #365899;
+}
+
+/* Forgot password link */
+.forgot-password {
+    margin: 10px 0;
+}
+
+.forgot-password a {
+    font-size: 14px;
+    color: #3897f0;
+    text-decoration: none;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+/* Signup container */
+.signup-container {
+    margin-top: 15px;
+}
+
+.signup-container p {
+    font-size: 14px;
+}
+
+.signup-container a {
+    color: #3897f0;
+    text-decoration: none;
+}
+
+.signup-container a:hover {
+    text-decoration: underline;
+}

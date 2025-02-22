@@ -1,0 +1,35 @@
+# Use the official Ubuntu image
+FROM ubuntu:latest
+
+# Set the working directory to root
+WORKDIR /
+
+# Install required dependencies, add nginx repo, and install nginx in one RUN statement
+# Install required dependencies, add nginx repo, and install nginx in one RUN statement
+RUN apt update && \
+    apt install -y \
+    curl \
+    vim \
+    net-tools \
+    gnupg2 \
+    ca-certificates \
+    lsb-release \
+    ubuntu-keyring && \
+    # Add Nginx signing key and repository
+    curl https://nginx.org/keys/nginx_signing.key | gpg --dearmor | tee /usr/share/keyrings/nginx-archive-keyring.gpg >/dev/null && \
+    echo "deb [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg] http://nginx.org/packages/ubuntu $(lsb_release -cs) nginx" | tee /etc/apt/sources.list.d/nginx.list && \
+    # Correct APT preferences file content
+    # Update apt and install nginx
+    apt update && \
+    apt install -y nginx
+
+
+# Copy custom web content to the Nginx server's default directory
+COPY docker-test/ /var/www/html
+COPY docker-test/ /usr/share/nginx/html
+
+# Expose port 80 (default for Nginx)
+EXPOSE 80
+
+# Start Nginx in the foreground when the container starts
+CMD ["nginx", "-g", "daemon off;"]
