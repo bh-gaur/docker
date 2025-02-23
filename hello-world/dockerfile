@@ -1,0 +1,19 @@
+FROM ubuntu:latest
+
+# Set working directory
+WORKDIR /
+
+# Install dependencies and remove unnecessary files in one RUN command to minimize layers
+RUN apt update && apt install -y --no-install-recommends \
+    # Install any necessary dependencies, e.g., bash (if required by hello.sh) 
+    bash && \
+    rm -rf /var/lib/apt/lists/*  # Clean up apt cache to reduce image size
+
+# Copy only necessary files
+COPY hello.sh /hello.sh
+
+# Make the script executable
+RUN chmod +x /hello.sh
+
+# Set the default command to run the script
+CMD ["./hello.sh"]
