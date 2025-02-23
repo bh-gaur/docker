@@ -1,47 +1,30 @@
-Sudo docker search [image-name]
-Sudo docker pull [image-name]
-Sudo docker run [image-name] 
-Sudo docker rmi [image-name] 
-Sudo docker run -d [image-name]
-Sudo docker run -d -p host_port:container_port [image-name] 
-Sudo docker exec -it container_id shell_name
-Sudo docker ps
-Sudo docker ps -a
-Sudo docker stop container_id
-Sudo docker rm container_id
-Sudo docker restart container_id
-Sudo docker run -p host_port:container_port -d -v path/on/host:path/on/container [image-name] 
+sudo docker search [image-name] 
+sudo docker pull [image-name]
+sudo docker run [image-name] 
+sudo docker rmi [image-name] 
+sudo docker run -d [image-name]
+sudo docker run -d -p host_port:container_port [image-name] 
+sudo docker exec -it container_id shell_name
+sudo docker ps
+sudo docker ps -a
+sudo docker stop container_id
+sudo docker start <container_id/container>
+sudo docker rm container_id
+sudo docker restart container_id
+sudo docker run -p host_port:container_port -d -v path/on/host:path/on/container [image-name] 
+sudo docker build -t [image-name] [path]
+sudo docker tag [image-id] [repository:tag]
+sudo docker ps - lists running continer
+sudo docker ps -a - lists all continer
+sudo docker cp <container_id:/path/to/file . - copies file from container    
+sudo docker images - lists of images
 
-docker build -t [image-name] [path]
-docker tag [image-id] [repository:tag]
-
-docker ps - lists running continer
-
-docker ps -a - lists all continer
-
-docker search <image_name> - searching iamges
-
-docker pull <image_name> - download image 
-
-docker iamges - lists of iamges
-
-docker run <image_name> - runs image container
-
-docker run -d - background process
+sudo docker run -d - background process
 -p <port>:<port>/tcp - publish port
 -P - publish all ports to random ports  
 --name <container_name> - assign a  
 
-docker stop  <container_id/container_name> - stops the contanier
-
-docker start <container_id/container  
-
-docker rm <container_id/container_name> - remove the container
-
-docker cp <container_id:/path/to/file . - copies file from container    
-
-docker rmi  <image_id/image_name:tag> - removes an image
-
-docker build -t <tag_name> . - builds an image from DockerFile in current directory
+sudo docker rmi  <image_id/image_name:tag> - removes an image
+sudo docker build -t <tag_name> . - builds an image from DockerFile in current directory
 
 docker -v
