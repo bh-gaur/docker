@@ -13,7 +13,8 @@ sudo docker rm container_id
 sudo docker restart container_id
 sudo docker run -p host_port:container_port -d -v path/on/host:path/on/container [image-name] 
 sudo docker build -t [image-name] [path]
-sudo docker tag [image-id] [repository:tag]
+sudo docker tag [image:tag] [repository:tag]
+sudo docker push image:tag
 sudo docker ps - lists running continer
 sudo docker ps -a - lists all continer
 sudo docker cp <container_id:/path/to/file . - copies file from container    
