@@ -1,7 +1,7 @@
 name: Build and Push Docker Image
 
 on:
-  workflow_dispatch: 
+  workflow_dispatch:
 #   push:
 #     branches:
 #       - main
@@ -12,9 +12,7 @@ on:
 env:
   DOCKER_IMAGE_NAME: "bgdevopslearn/react-app"
   DOCKER_TAG: "latest"
-  # DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-  # DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-  DOCKERFILE_PATH: "react-app-test"
+  DOCKERFILE_PATH: "react-app-test"  # Directory where Dockerfile is located
 
 jobs:
   build:
