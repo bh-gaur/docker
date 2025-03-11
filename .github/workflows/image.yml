@@ -2,15 +2,15 @@ name: Build and Push Docker Image
 
 on:
   workflow_dispatch:
-#   push:
-#     branches:
-#       - main
+  push:
+    branches:
+      - main
 #   pull_request:
 #     branches:
 #       - main
 
 env:
-  DOCKER_IMAGE_NAME: "bgdevopslearn/react-app"
+  DOCKER_IMAGE_NAME: "bgdevopslearn/test"
   DOCKER_TAG: "latest"
   DOCKERFILE_PATH: "react-app-test"  # Directory where Dockerfile is located
 
@@ -25,7 +25,7 @@ jobs:
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v1
 
-    - name: Log in to Docker Hub
+    - name: Log in to Docker Hub using docker login
       run: |
         docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
 
@@ -36,5 +36,4 @@ jobs:
 
     - name: Push the Docker image to Docker Hub
       run: |
-        docker tag ${{ env.DOCKER_IMAGE_NAME }}:${{ env.DOCKER_TAG }} ${{ env.DOCKER_IMAGE_NAME }}:${{ env.DOCKER_TAG }}
         docker push ${{ env.DOCKER_IMAGE_NAME }}:${{ env.DOCKER_TAG }}
