@@ -5,9 +5,12 @@ on:
   # push:
   #   branches:
   #     - main
-#   pull_request:
-#     branches:
-#       - main
+  # pull_request:
+  #   branches:
+  #     - main
+  # repository_dispatch:
+  #   types:
+  #     - trigger-workflow-1
 
 env:
   DOCKER_IMAGE_NAME: "bgdevopslearn/test"
