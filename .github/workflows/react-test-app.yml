@@ -13,8 +13,7 @@ on:
       - trigger-workflow-1
 
 env:
-  DOCKER_IMAGE_NAME: "bgdevopslearn/test"
-  DOCKER_TAG: "latest"
+  IMAGE_NAME: "bgdevopslearn/test"
   DOCKERFILE_PATH: "react-app-test"  # Directory where Dockerfile is located
 
 jobs:
@@ -40,9 +39,12 @@ jobs:
 
     - name: Build the Docker image
       run: |
+        TIMESTAMP=$(date +'%Y%m%d%H%M%S')
+        UNIQUE_TAG=${{ github.sha }}-$TIMESTAMP
+
         cd ${{ env.DOCKERFILE_PATH }}
-        docker build -t ${{ env.DOCKER_IMAGE_NAME }}:${{ env.DOCKER_TAG }} .
+        docker build -t ${{ env.DOCKER_IMAGE_NAME }}:$UNIQUE_TAG -f Dockerfile .
 
     - name: Push the Docker image to Docker Hub
       run: |
-        docker push ${{ env.DOCKER_IMAGE_NAME }}:${{ env.DOCKER_TAG }}
+        docker push ${{ env.DOCKER_IMAGE_NAME }}:$UNIQUE_TAG
