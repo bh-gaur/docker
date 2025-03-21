@@ -24,7 +24,7 @@ def home():
 
 @app.route('/favicon.ico')
 def favicon():
-    return send_from_directory('static', 'favicon.svg')
+    return send_from_directory('static', 'favicon.ico')
 
 # Endpoint to create a new user
 @app.route('/users', methods=['POST'])
