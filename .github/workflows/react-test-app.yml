@@ -39,12 +39,12 @@ jobs:
 
     - name: Build the Docker image
       run: |
-        TIMESTAMP=$(date +'%Y%m%d%H%M%S')
-        UNIQUE_TAG=${{ github.sha }}-$TIMESTAMP
+        # TIMESTAMP=$(date +'%Y%m%d%H%M%S')
+        # UNIQUE_TAG=${{ github.sha }}-$TIMESTAMP
 
         cd ${{ env.DOCKERFILE_PATH }}
-        docker build -t ${{ env.DOCKER_IMAGE_NAME }}:$UNIQUE_TAG -f Dockerfile .
+        docker build -t ${{ env.DOCKER_IMAGE_NAME }} -f Dockerfile .
 
     - name: Push the Docker image to Docker Hub
       run: |
-        docker push ${{ env.DOCKER_IMAGE_NAME }}:$UNIQUE_TAG
+        docker push ${{ env.DOCKER_IMAGE_NAME }}
