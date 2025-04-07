@@ -8,12 +8,12 @@ on:
   # pull_request:
   #   branches:
   #     - main
-  repository_dispatch:
-    types:
-      - trigger-workflow-1
+  # repository_dispatch:
+  #   types:
+  #     - trigger-workflow-1
 
 env:
-  IMAGE_NAME: "bgdevopslearn/test"
+  IMAGE_NAME: "bhgaur/devops"
   DOCKERFILE_PATH: "react-app-test"  # Directory where Dockerfile is located
 
 jobs:
