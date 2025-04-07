@@ -1,3 +1,4 @@
+docker -v
 sudo docker search [image-name] 
 sudo docker pull [image-name]
 sudo docker run [image-name] 
@@ -28,4 +29,5 @@ sudo docker run -d - background process
 sudo docker rmi  <image_id/image_name:tag> - removes an image
 sudo docker build -t <tag_name> . - builds an image from DockerFile in current directory
 
-docker -v
+sudo docker-compose up
+sudo docker-build
