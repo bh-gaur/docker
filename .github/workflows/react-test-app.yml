@@ -13,7 +13,7 @@ on:
   #     - trigger-workflow-1
 
 env:
-  IMAGE_NAME: "bhgaur/devops"
+  DOCKER_IMAGE_NAME: "bhgaur/devops"
   DOCKERFILE_PATH: "react-app-test"  # Directory where Dockerfile is located
 
 jobs:
