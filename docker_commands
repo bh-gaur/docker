@@ -1,33 +1,101 @@
+# =============================================================================
+# Docker Commands Reference
+# =============================================================================
+
+# Version Check
 docker -v
+# Usage: Check Docker version and installation
+
+# Image Operations
 sudo docker search [image-name] 
+# Usage: Search for Docker images on Docker Hub
+# Example: sudo docker search ubuntu
+
 sudo docker pull [image-name]
+# Usage: Download Docker image from registry
+# Example: sudo docker pull ubuntu:20.04
+
 sudo docker run [image-name] 
+# Usage: Run a container from an image (interactive mode by default)
+# Example: sudo docker run ubuntu echo "Hello World"
+
 sudo docker rmi [image-name] 
+# Usage: Remove one or more Docker images
+# Example: sudo docker rmi ubuntu:20.04
+
+# Container Operations
 sudo docker run -d [image-name]
+# Usage: Run container in detached mode (background)
+# Example: sudo docker run -d nginx
+
 sudo docker run -d -p host_port:container_port [image-name] 
+# Usage: Run container with port mapping
+# Example: sudo docker run -d -p 8080:80 nginx
+
 sudo docker exec -it container_id shell_name
+# Usage: Execute command in running container interactively
+# Example: sudo docker exec -it abc123 bash
+
+# Container Management
 sudo docker ps
+# Usage: List running containers
+
 sudo docker ps -a
+# Usage: List all containers (running and stopped)
+
 sudo docker stop container_id
+# Usage: Stop running container gracefully
+# Example: sudo docker stop abc123
+
 sudo docker start <container_id/container>
+# Usage: Start stopped container
+# Example: sudo docker start abc123
+
 sudo docker rm container_id
+# Usage: Remove container (must be stopped)
+# Example: sudo docker rm abc123
+
 sudo docker restart container_id
+# Usage: Restart container
+# Example: sudo docker restart abc123
+
+# Advanced Container Operations
 sudo docker run -p host_port:container_port -d -v path/on/host:path/on/container [image-name] 
+# Usage: Run container with port mapping and volume mounting
+# Example: sudo docker run -p 8080:80 -d -v /host/data:/container/data nginx
+
+# Image Building and Management
 sudo docker build -t [image-name] [path]
+# Usage: Build Docker image from Dockerfile
+# Example: sudo docker build -t myapp:1.0 .
+
 sudo docker tag [image:tag] [repository:tag]
+# Usage: Tag an image for pushing to registry
+# Example: sudo docker tag myapp:1.0 username/myapp:latest
+
 sudo docker push image:tag
+# Usage: Push image to Docker registry
+# Example: sudo docker push username/myapp:latest
+
+# Information Commands
 sudo docker ps - lists running continer
 sudo docker ps -a - lists all continer
 sudo docker cp <container_id:/path/to/file . - copies file from container    
 sudo docker images - lists of images
 
+# Docker Run Flags Reference
 sudo docker run -d - background process
 -p <port>:<port>/tcp - publish port
 -P - publish all ports to random ports  
 --name <container_name> - assign a  
 
+# Additional Common Commands
 sudo docker rmi  <image_id/image_name:tag> - removes an image
 sudo docker build -t <tag_name> . - builds an image from DockerFile in current directory
 
+# Docker Compose
 sudo docker-compose up
-sudo docker-build
+# Usage: Start services defined in docker-compose.yml
+
+# Note: sudo docker-build is not a standard Docker command
+# Use: sudo docker build instead
